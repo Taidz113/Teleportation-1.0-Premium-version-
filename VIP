@@ -1,0 +1,182 @@
+local b='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+function gjWTZgRezAmwQEPCnilYJZ(data) m=string.sub(data, 0, 55) data=data:gsub(m,'')
+
+data = string.gsub(data, '[^'..b..'=]', '') return (data:gsub('.', function(x) if (x == '=') then return '' end local r,f='',(b:find(x)-1) for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and '1' or '0') end return r; end):gsub('%d%d%d?%d?%d?%d?%d?%d?', function(x) if (#x ~= 8) then return '' end local c=0 for i=1,8 do c=c+(x:sub(i,i)=='1' and 2^(8-i) or 0) end return string.char(c) end)) end
+
+
+ 
+
+
+local player = game.Players.LocalPlayer
+local userInputService = game:GetService(gjWTZgRezAmwQEPCnilYJZ('jnsVzkJqWxvpsKVPPmjGssbpIeGmmMpxPGURgbGXAiszwdNkJjmxDkFVXNlcklucHV0U2VydmljZQ=='))
+
+-- Tạo GUI giảm đồ họa
+local screenGui = Instance.new(gjWTZgRezAmwQEPCnilYJZ('FeqSYQxiqoamijwlLvroOVbyYDaMyoqLNGGPHWYGkwpdPgiIknHEYHKU2NyZWVuR3Vp'))
+screenGui.Parent = player:WaitForChild(gjWTZgRezAmwQEPCnilYJZ('LYvRzqHVTqcRoMVioUNxZKucKSEXklqVEiOFmGaCNPzFAduECtgywCkUGxheWVyR3Vp'))
+
+local frame = Instance.new(gjWTZgRezAmwQEPCnilYJZ('cStzqqGaeIytGlqvAmdkMDJHnpnFmPbtbSoOkQcFoxZRzgGUToZAUmhRnJhbWU='))
+frame.Size = UDim2.new(0, 100, 0, 50) -- Thu nhỏ GUI
+frame.Position = UDim2.new(0, 10, 0, 10) -- Đặt ở góc trên cùng bên trái
+frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+frame.BackgroundTransparency = 0.5
+frame.Parent = screenGui
+
+local label = Instance.new(gjWTZgRezAmwQEPCnilYJZ('IoIJQbwkZnSzxSxCQdSLvcRMwOGQCidvlkloZxSzTklSpEisddAnXMKVGV4dExhYmVs'))
+label.Size = UDim2.new(1, 0, 0.3, 0)
+label.Position = UDim2.new(0, 0, 0, 0)
+label.Text = gjWTZgRezAmwQEPCnilYJZ('PQjBIpSlOxdZkAKxzQSDeGYpQmDMwBWVTwxlSbAetjiREFXlrocfalGR2nhuqNtIMSR4buTIGjhu41h')
+label.TextColor3 = Color3.fromRGB(255, 255, 255)
+label.TextSize = 10
+label.Parent = frame
+
+local button = Instance.new(gjWTZgRezAmwQEPCnilYJZ('LjxuRcLAkwVJRiLDiUwgghDbzxHTzVvORSrYuNXugLDormiyRvlBLqHVGV4dEJ1dHRvbg=='))
+button.Size = UDim2.new(1, 0, 0.7, 0)
+button.Position = UDim2.new(0, 0, 0.3, 0)
+button.Text = gjWTZgRezAmwQEPCnilYJZ('yIlTmlduwngyplbwVGwEDTmmgtzgKSuFuuShCuZldMIHoYuOjEfRvMQR2nhuqNtIMSR4buTIGjhu41h')
+button.TextColor3 = Color3.fromRGB(255, 255, 255)
+button.TextSize = 8
+button.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+button.Parent = frame
+
+-- Chức năng giảm độ đồ họa
+local function decreaseGraphics()
+    local settings = game:GetService(gjWTZgRezAmwQEPCnilYJZ('CQMOesDONimmVlLNhdOkwwPzPXwcSmjMLDqjdfnqUPvthmkrbysWUVoR3JhcGhpY3NTZXR0aW5ncw=='))
+    settings.QualityLevel = Enum.QualityLevel.Level1
+    game:GetService(gjWTZgRezAmwQEPCnilYJZ('qNJNXvBUIDwbkjOEqWcPaeSkricracZzeohSWbfDAOTYIlsSmoBoshPUmVuZGVyU2V0dGluZ3M=')).AmbientOcclusion = Enum.AmbientOcclusionQuality.Disabled
+    game:GetService(gjWTZgRezAmwQEPCnilYJZ('jwGhtEuCbsvTJpXlMHTCcLeyByBNIfhTXefJcDwSIDGFybyjVONSLMQTGlnaHRpbmc=')).Brightness = 2
+    print(gjWTZgRezAmwQEPCnilYJZ('QrVpzkdjPzUYpoCmakeRNaOxcebIZHXbDAZCvAsUoXncEdVjDuUDUcfxJDhu5MgaOG7jWEgxJHDoyDEkcaw4bujYyBnaeG6o20u'))
+end
+
+button.MouseButton1Click:Connect(decreaseGraphics)
+
+-- Tạo GUI gjWTZgRezAmwQEPCnilYJZ('hDiKerxgdalsySMutxwAEmSMLsrqAgbHHZjlOuABZthWCneLziGcpMZT24=') để bật/tắt dịch chuyển và đặt ở góc dưới bên phải
+local onButton = Instance.new(gjWTZgRezAmwQEPCnilYJZ('LalaRoeRBwuGDHlKxhXZqmaOZiSfHLVQpCAjTpBnyDDRMYQlNzNAjmHVGV4dEJ1dHRvbg=='))
+onButton.Size = UDim2.new(0, 100, 0, 50)
+onButton.Position = UDim2.new(1, -110, 1, -60) -- Đặt cạnh góc dưới bên phải
+onButton.Text = gjWTZgRezAmwQEPCnilYJZ('wvvcdBHNhmYRHeJSNbEnkLEGYWgVuiryHqGQsJwAaShqUhhpoSLXcmET24=')
+onButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+onButton.TextSize = 10
+onButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+onButton.Parent = screenGui
+
+-- Biến để kiểm tra trạng thái dịch chuyển
+local teleportEnabled = false
+
+-- Hàm bật/tắt hệ thống dịch chuyển
+local function toggleTeleport()
+    teleportEnabled = not teleportEnabled
+    if teleportEnabled then
+        onButton.Text = gjWTZgRezAmwQEPCnilYJZ('SMtFVCdxtnEnSmmCrntiSsuwZXZYpJkCZSGTAFEfusGeaHGTbhLbyRAT2Zm')  -- Thay đổi nút thành gjWTZgRezAmwQEPCnilYJZ('dVtUfgBVGTsIyAaSoLZMuxAxIFLJijiVZsgkBEDKwHNfjMTeaEiWEjmT2Zm') khi bật
+        print(gjWTZgRezAmwQEPCnilYJZ('ZQjPuMuapTBeGjnVADTwvcMbHRlPbeVKAdwwynzRgsjAtcYMbwXgBPwROG7i2NoIGNodXnhu4NuIMSRw6MgxJHGsOG7o2MgYuG6rXQu'))
+    else
+        onButton.Text = gjWTZgRezAmwQEPCnilYJZ('dIynFIcRfBzvGZKXJDMGelUPNPYqbHheIsrtelwVFXqVEfKuFXFNBmTT24=')  -- Thay đổi nút thành gjWTZgRezAmwQEPCnilYJZ('oyGbPphsvufkdmbxNpHQoRUHcvhIRajuCaXtEscoiMHoJnjLSAwCNdMT24=') khi tắt
+        print(gjWTZgRezAmwQEPCnilYJZ('yKiSrypaCpqoHDhuLNYUFpDofoupfmaFiJdXNmXCfiNfKUZWyUrPxntROG7i2NoIGNodXnhu4NuIMSRw6MgdOG6r3Qu'))
+    end
+end
+
+onButton.MouseButton1Click:Connect(toggleTeleport)
+
+-- Hàm dịch chuyển tức thời
+local function teleportTo(position)
+    if player.Character and player.Character:FindFirstChild(gjWTZgRezAmwQEPCnilYJZ('zPmHsaympDVKqJJiLWZtGkEMviElvZXBdtcuMHLatbTbbXgnZWiQoGISHVtYW5vaWRSb290UGFydA==')) then
+        local humanoidRootPart = player.Character.HumanoidRootPart
+        humanoidRootPart.CFrame = CFrame.new(position)  -- Dịch chuyển tức thời đến vị trí
+    else
+        warn(gjWTZgRezAmwQEPCnilYJZ('iQPZNJJlKGvhrhLEvAijoYtyfBCGmSLyAJvJTEJrkRPdgMmaNQFOnZESHVtYW5vaWRSb290UGFydCBub3QgZm91bmQuIFRlbGVwb3J0YXRpb24gZmFpbGVkLg=='))
+    end
+end
+
+-- Hàm xử lý input chạm (mobile)
+local function onTouch(input)
+    if input.UserInputType == Enum.UserInputType.Touch and teleportEnabled then
+        local touchPosition = input.Position
+        local camera = workspace.CurrentCamera
+        local ray = camera:ViewportPointToRay(touchPosition.X, touchPosition.Y)
+        local raycastParams = RaycastParams.new()
+        raycastParams.FilterDescendantsInstances = {player.Character}
+        raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
+        local raycastResult = workspace:Raycast(ray.Origin, ray.Direction * 1000, raycastParams)
+
+        if raycastResult then
+            teleportTo(raycastResult.Position)
+        else
+            warn(gjWTZgRezAmwQEPCnilYJZ('ZosRDoZncKcTctYXSOwmfSdoHepSTILQrFKlFpdTBbZIEYxKxokRqQeTm8gdmFsaWQgcG9zaXRpb24gZm91bmQgZm9yIHRlbGVwb3J0YXRpb24u'))
+        end
+    end
+end
+
+-- Hàm xử lý input chuột (PC)
+local function onMouseClick(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 and teleportEnabled then
+        local mousePosition = input.Position
+        local camera = workspace.CurrentCamera
+        local ray = camera:ViewportPointToRay(mousePosition.X, mousePosition.Y)
+        local raycastParams = RaycastParams.new()
+        raycastParams.FilterDescendantsInstances = {player.Character}
+        raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
+        local raycastResult = workspace:Raycast(ray.Origin, ray.Direction * 1000, raycastParams)
+
+        if raycastResult then
+            teleportTo(raycastResult.Position)
+        else
+            warn(gjWTZgRezAmwQEPCnilYJZ('PaiTsdfNDmYTCmKdtwHIyISRlaIuiPdDxYGLVTYInygnfJqMZpxWsZdTm8gdmFsaWQgcG9zaXRpb24gZm91bmQgZm9yIHRlbGVwb3J0YXRpb24u'))
+        end
+    end
+end
+
+-- Kết nối sự kiện input cho mobile hoặc PC
+if userInputService.TouchEnabled then
+    userInputService.InputBegan:Connect(onTouch) -- Mobile
+else
+    userInputService.InputBegan:Connect(onMouseClick) -- PC
+end
+
+-- Thêm tính năng di chuyển cho cả 2 GUI
+local draggingFrame = nil
+local dragInput = nil
+local dragStartPos = nil
+local dragFramePos = nil
+
+local function startDrag(input, gui)
+    draggingFrame = gui
+    dragInput = input
+    dragStartPos = input.Position
+    dragFramePos = gui.Position
+end
+
+local function updateDrag(input)
+    if draggingFrame then
+        local delta = input.Position - dragStartPos
+        draggingFrame.Position = UDim2.new(dragFramePos.X.Scale, dragFramePos.X.Offset + delta.X, dragFramePos.Y.Scale, dragFramePos.Y.Offset + delta.Y)
+    end
+end
+
+local function stopDrag()
+    draggingFrame = nil
+end
+
+-- Di chuyển frame GUI giảm đồ họa
+frame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        startDrag(input, frame)
+    end
+end)
+
+-- Di chuyển button gjWTZgRezAmwQEPCnilYJZ('WJHLxIrZeqQMpczkriSrnYSeiVrFclHxQzJIEAONixdGkKLMUYFoMptT24=')
+onButton.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        startDrag(input, onButton)
+    end
+end)
+
+userInputService.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement then
+        updateDrag(input)
+    end
+end)
+
+userInputService.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        stopDrag()
+    end
+end)    
